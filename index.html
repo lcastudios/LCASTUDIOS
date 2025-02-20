@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCA Studios - Indian Film Insight</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #4ecdc4;
+            --dark: #2d3436;
+            --gold: #fdcb6e;
+        }
+
+        body {
+            background: linear-gradient(45deg, #2d3436 0%, #000000 100%);
+            color: #fff;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .navbar {
+            backdrop-filter: blur(10px);
+            background: rgba(45, 52, 54, 0.95) !important;
+            border-bottom: 1px solid var(--gold);
+        }
+
+        .hero-section {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            right: -50px;
+            height: 100px;
+            background: var(--gold);
+            transform: rotate(-3deg);
+        }
+
+        .film-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .film-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: var(--gold);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .news-ticker {
+            background: var(--dark);
+            padding: 15px 0;
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: color 0.3s;
+        }
+
+        .social-icon:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h2 class="mb-0">LCA STUDIOS</h2>
+                <small class="text-gold">Bollywood Pulse</small>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Interviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Behind Scenes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section animate-fade">
+        <div class="container text-center">
+            <h1 class="display-3 mb-4">Unveiling Cinematic Excellence</h1>
+            <p class="lead">Your Premier Source for Indian Film News & Trends</p>
+            <div class="mt-4">
+                <button class="btn btn-outline-warning btn-lg mx-2">Explore Now</button>
+                <button class="btn btn-gold btn-lg mx-2">Latest Updates</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured News Grid -->
+    <section class="py-5">
+        <div class="container">
+            <h3 class="section-title animate-fade">Spotlight Features</h3>
+            <div class="row g-4">
+                <div class="col-md-4 animate-fade">
+                    <div class="film-card p-3">
+                        <img src="https://cdn.pixabay.com/photo/2019/04/24/21/55/cinema-4153289_1280.jpg" class="img-fluid rounded" alt="Film Set">
+                        <h4 class="mt-3">New Mega-Budget Historical Epic</h4>
+                        <p>Behind-the-scenes look at India's most ambitious production</p>
+                    </div>
+                </div>
+                <!-- Add more film cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- News Ticker -->
+    <div class="news-ticker">
+        <div class="container">
+            <marquee behavior="scroll" direction="left">
+                • Breaking: Aryan Khanna announces new directorial venture •
+                Trending: Folk fusion in modern soundtracks gains popularity •
+                Exclusive: Interview with National Award-winning cinematographer •
+            </marquee>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-4 mt-5">
+        <div class="container text-center">
+            <div class="social-icons mb-3">
+                <a href="#" class="social-icon mx-3"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon mx-3"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon mx-3"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="mb-0">&copy; 2025 LCA Studios. Lights, Camera, Action!</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add intersection observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade');
+                }
+            });
+        });
+
+        document.querySelectorAll('.film-card').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
